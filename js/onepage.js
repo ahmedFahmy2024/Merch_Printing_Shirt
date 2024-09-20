@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Fetch categories and designs dynamically
-  axios.get('https://db.valleycustom.net/api/categories')
+  axios.get(`${API_BASE_URL}/api/categories`)
     .then(response => {
       const categories = response.data;
       const categoryList = document.getElementById('categoryList');
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Function to fetch designs for a specific category
   function fetchCategoryDesigns(categoryId) {
-    axios.get(`https://db.valleycustom.net/api/categories/${categoryId}/designs`)
+    axios.get(`${API_BASE_URL}/api/categories/${categoryId}/designs`)
       .then(response => {
         const designs = response.data;
         const swiperWrapper = document.querySelector('.swiper-wrapper');
@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://db.valleycustom.net/api/images/latest?branch_number=2"
+        `${API_BASE_URL}/api/images/latest?branch_number=2`
       );
       const imageUrl = response.data.image_url;
 
@@ -243,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://db.valleycustom.net/api/images/latest?branch_number=3"
+        `${API_BASE_URL}/api/images/latest?branch_number=3`
       );
       const imageUrl = response.data.image_url;
 

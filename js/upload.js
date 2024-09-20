@@ -46,7 +46,7 @@ async function handleDialogSubmit(e) {
     }
 
     try {
-        const response = await axios.post('https://db.valleycustom.net/api/images', form, {
+        const response = await axios.post(`${API_BASE_URL}/api/images`, form, {
             headers: {
                 "Content-Type": "multipart/form-data",
             },
@@ -92,7 +92,7 @@ async function handleDialogSubmit2(e) {
     }
 
     try {
-        const response = await axios.post('https://db.valleycustom.net/api/images', form, {
+        const response = await axios.post(`${API_BASE_URL}/api/images`, form, {
             headers: {
                 "Content-Type": "multipart/form-data",
             },
