@@ -1,0 +1,57 @@
+/* Style for rotation slider */
+.font-size-slider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#font-size-slider,
+#font-size-slider-back {
+    flex: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 3px;
+    width: 100%;
+    background-color: #ddd;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+
+#font-size-slider::-webkit-slider-thumb,
+#font-size-slider-back::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #007bff;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#font-size-input,
+#font-size-input-back {
+    width: 45px;
+    min-width: 2rem;
+    text-align: center;
+    box-sizing: content-box;
+    animation-name: mui-auto-fill-cancel;
+    animation-duration: 10ms;
+    padding: 10px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    background: none;
+    height: 1.4375em;
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    letter-spacing: inherit;
+    color: currentcolor;
+    border: 0px;
+    outline: none;
+    border: 1px solid rgba(145, 158, 171, 0.16);
+    border-radius: 10px;
+}

@@ -1,0 +1,29 @@
+.color-picker {
+    text-align: center;
+}
+
+.color-picker .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.color-picker .content:hover {
+    cursor: pointer;
+}
+
+.color-picker .content .color-item:hover {
+    cursor: pointer;
+    transform: translate(0, -5px);
+}
+
+.color-picker .content .color-item {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    border-radius: 5px;
+}

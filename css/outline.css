@@ -1,0 +1,25 @@
+/* outline */
+.outline-picker {
+    text-align: center;
+}
+
+.outline-picker .outline-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.outline-picker .outline-content .outline-items {
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    border: 1px solid #E9e9e9;
+    padding: 2px;
+    transition: 0.3s ease-in-out;
+}
+
+.outline-picker .outline-content .outline-items:hover {
+    cursor: pointer;
+    transform: translate(0, -5px);
+}

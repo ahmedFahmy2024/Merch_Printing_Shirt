@@ -1,0 +1,107 @@
+/* Style for rotation slider */
+.letter-spacing-slider,
+.line-height-slider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#letter-spacing-slider,
+#letter-spacing-slider-back,
+#line-height-slider,
+#line-height-slider-back {
+    flex: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 3px;
+    width: 100%;
+    background-color: #ddd;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 5px;
+}
+
+#letter-spacing-slider::-webkit-slider-thumb,
+#letter-spacing-slider-back::-webkit-slider-thumb,
+#line-height-slider::-webkit-slider-thumb,
+#line-height-slider-back::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background: #007bff;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#letter-spacing-input,
+#letter-spacing-input-back,
+#line-height-input,
+#line-height-input-back {
+    width: 45px;
+    min-width: 2rem;
+    text-align: center;
+    box-sizing: content-box;
+    animation-name: mui-auto-fill-cancel;
+    animation-duration: 10ms;
+    padding: 10px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    background: none;
+    height: 1.4375em;
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    letter-spacing: inherit;
+    color: currentcolor;
+    border: 0px;
+    outline: none;
+    border: 1px solid rgba(145, 158, 171, 0.16);
+    border-radius: 10px;
+}
+
+/* text align */
+.btn-check:checked+.btn-outline-primary {
+    background-color: #ACACAC;
+    color: #fff;
+    border-color: #ACACAC;
+}
+
+.btn-check+.btn-outline-primary {
+    background-color: white;
+    color: #ACACAC;
+    border-color: #ACACAC;
+}
+
+.btn-check:hover+.btn-outline-primary {
+    background-color: white;
+    color: #ACACAC;
+    border-color: #ACACAC;
+}
+
+
+
+#paragraph1 {
+    /* Ensure default styles for the editable text area */
+    text-align: left;
+    letter-spacing: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+}
+
+#paragraph11 {
+    /* Ensure default styles for the editable text area */
+    text-align: left;
+    letter-spacing: normal;
+    line-height: normal;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none;
+    text-transform: none;
+}

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="css/onepage.css">
+    <link rel="stylesheet" href="css/draggable_resizable.css">
+    <link rel="stylesheet" href="css/swiper.css">
+    <link rel="stylesheet" href="css/shirtcolor.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/colorpicker.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/outline.css">
+    <link rel="stylesheet" href="css/fontsize.css">
+    <link rel="stylesheet" href="css/textshape.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/upload.css">
+</head>
+
+<body>
+    <div class="onepage">
+        <div class="container">
+            <div class="logo">
+                <img src="./imgs/logo.webp" alt="">
+            </div>
+            <!-- shirt -->
+            <div class="firstStack">
+
+                <!-- column -->
+                <div class="column">
+                    <!-- front && back -->
+                    <div class="first-row">
+                        <div id="front" class="front">
+                            <img src="./imgs/front-shirt (1).png" alt="onepage">
+                            <div class="text">Front</div>
+                        </div>
+                        <div id="back" class="back">
+                            <img src="./imgs/back-shirt (1).png" alt="onepage">
+                            <div class="text">Back</div>
+                        </div>
+                    </div>
+                    <!-- add photo -->
+                    <div class="second-row" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <div class="addphoto">Upload</div>
+                    </div>
+                    <!-- add photo -->
+                    <div class="second-row" data-bs-toggle="modal" data-bs-target="#exampleModalback">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <div class="addphoto">Upload</div>
+                    </div>
+                    <!-- add text -->
+                    <div class="third-row">
+                        <i class="fa-solid fa-font"></i>
+                        <div class="addtext">Add Text</div>
+                    </div>
+
+                    <!-- add design -->
+                    <div class="fourth-row" data-bs-toggle="modal" data-bs-target="#designModal">
+                        <i class="fa-regular fa-image"></i>
+                        <div class="ourdesign">Designs</div>
+                    </div>
+                </div>
+
+                <!-- picture -->
+                <!-- front-shirt -->
+                <div class="img-container front-img-container">
+                    <div class="shirt-container" id="new-paragraph-container">
+                        <img id="shirt-image" class="shirt" src="./imgs/front.png" alt="onepage">
+                        <div class="picture-container resize-drag">
+                            <img id="shirt-picture" class="picture" src="./imgs/one (2).png" alt="onepage">
+                        </div>
+                        <div class="first-img-text draggable">
+                            <p class="first-shirt-text" id="paragraph1" contenteditable></p>
+                        </div>
+
+                        <!-- New paragraphs will be added here -->
+
+                    </div>
+                </div>
+
+                <!-- back-shirt -->
+                <div class="img-container back-img-container">
+                    <div class="shirt-container" id="new-paragraph-container-back">
+                        <img id="shirt-image-back" class="shirt" src="./imgs/back.png" alt="Back of shirt">
+                        <div class="picture-container resize-drag">
+                            <img id="shirt-picture-back" class="picture" src="./imgs/one (2).png" alt="onepage">
+                        </div>
+                        <div class="first-img-text draggable">
+                            <p class="first-shirt-text-back" id="paragraph11" contenteditable></p>
+                        </div>
+
+                        <!-- New paragraphs will be added here -->
+
+                    </div>
+                </div>
+
+                <!-- shirt colors -->
+                <div class="stack-color shirt-main">
+                    <div class="color-picker">
+                        <div class="content shirt-color" id="color-shirt">
+                            <!-- Color items will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="whole-pannel">
+                <!-- text function for front -->
+                <div class="text-functions textfunctionsfront">
+                    <!-- text input -->
+                    <div class="stack-text-input">
+                        <label class="input">
+                            <input class="input__field" type="text" placeholder=" " id="input" maxlength="25" />
+                            <span class="input__label">text here</span>
+                        </label>
+                    </div>
+
+                    <!-- font family select -->
+                    <div class="stack mt-3">
+                        <!-- <h3 class="big-title">Select Font: </h3> -->
+                        <div class="font-family-select">
+                            <label for="font-select" class="select">
+                                <select id="font-select" class="select-field">
+                                    <option value="">Select Font</option>
+                                </select>
+                                <span class="select-label">Select Font</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- font color select -->
+                    <div class="stack mt-3 font-color">
+                        <!-- <h3 class="big-title">Main Text Color: </h3> -->
+                        <div class="color-picker group">
+                            <div>Text Color</div>
+                            <div class="content fontcolornew" id="color-content">
+                                <!-- Color items will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- rotation slider -->
+                    <div class="stack mt-3">
+                        <div class="rotation-slider">
+                            <div>Rotation</div>
+                            <input type="range" min="-180" max="180" value="0" class="slider" id="rotation-slider">
+                            <input type="number" min="-180" max="180" value="0" id="rotation-input"
+                                placeholder="Enter degrees">
+                        </div>
+                    </div>
+
+                    <!-- outline color select -->
+                    <div class="stack mt-3 font-color">
+                        <div class="outline-picker group">
+                            <div>Outline</div>
+                            <div class="outline-content" id="outline-color-content">
+                                <!-- Outline color items will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- font size slider -->
+                    <div class="stack mt-3">
+                        <div class="font-size-slider">
+                            <div>Font Size</div>
+                            <input type="range" min="10" max="100" value="16" class="slider" id="font-size-slider">
+                            <input type="number" min="10" max="100" value="16" id="font-size-input"
+                                placeholder="Enter size">
+                        </div>
+                    </div>
+
+                    <!-- Letter Spacing -->
+                    <div class="stack mt-3">
+                        <div class="letter-spacing-slider">
+                            <div>Letter Spacing</div>
+                            <input type="range" min="0" max="20" value="0" class="slider" id="letter-spacing-slider">
+                            <input type="number" min="0" max="20" value="0" id="letter-spacing-input">
+                        </div>
+                    </div>
+
+                    <!-- Line Height -->
+                    <div class="stack mt-3">
+                        <div class="line-height-slider">
+                            <div>Line Height</div>
+                            <input type="range" min="1" max="3" step="0.1" value="1.5" class="slider"
+                                id="line-height-slider">
+                            <input type="number" min="1" max="3" step="0.1" value="1.5" id="line-height-input">
+                        </div>
+                    </div>
+
+                    <!-- Text Styling -->
+                    <div class="stack mt-3 group align-items-center">
+                        <div>Text Styling</div>
+                        <div class="btn-group" role="group" aria-label="Text Styling">
+                            <input type="checkbox" class="btn-check" id="text-bold" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="text-bold"><i class="fa fa-bold"></i></label>
+
+                            <input type="checkbox" class="btn-check" id="text-italic" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="text-italic"><i
+                                    class="fa fa-italic"></i></label>
+
+                            <input type="checkbox" class="btn-check" id="text-underline" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="text-underline"><i
+                                    class="fa fa-underline"></i></label>
+                        </div>
+                    </div>
+
+                    <!-- Text Transform -->
+                    <div class="stack mt-3 group align-items-center">
+                        <div>Text Transform</div>
+                        <div class="btn-group" role="group" aria-label="Text Transform">
+                            <input type="radio" class="btn-check" name="text-transform" id="transform-none" value="none"
+                                autocomplete="off" checked>
+                            <label class="btn btn-outline-primary" for="transform-none">None</label>
+
+                            <input type="radio" class="btn-check" name="text-transform" id="transform-uppercase"
+                                value="uppercase" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="transform-uppercase"><span
+                                    class="material-symbols-outlined">uppercase</span></label>
+
+                            <input type="radio" class="btn-check" name="text-transform" id="transform-lowercase"
+                                value="lowercase" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="transform-lowercase"><span
+                                    class="material-symbols-outlined">lowercase</span></label>
+
+                            <input type="radio" class="btn-check" name="text-transform" id="transform-capitalize"
+                                value="capitalize" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="transform-capitalize"><span
+                                    class="material-symbols-outlined">match_case</span></label>
+                        </div>
+                    </div>
+
+                    <!-- add new Text -->
+                    <div class="fifth-row" id="add-new-text">
+                        <i class="fa-regular fa-clone"></i>
+                        <div class="add-new-text">add text</div>
+                    </div>
+
+                </div>
+
+                <!-- text function for back -->
+                <div class="text-functions textfunctionsback">
+                    <!-- text input -->
+                    <div class="stack-text-input">
+                        <label class="input">
+                            <input class="input__field" type="text" placeholder=" " id="input-back" maxlength="25" />
+                            <span class="input__label">text here</span>
+                        </label>
+                    </div>
+
+                    <!-- font family select -->
+                    <div class="stack mt-3">
+                        <!-- <h3 class="big-title">Select Font: </h3> -->
+                        <div class="font-family-select">
+                            <label for="font-select-back" class="select">
+                                <select id="font-select-back" class="select-field">
+                                    <option value="">Select Font</option>
+                                </select>
+                                <span class="select-label">Select Font</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- font color select -->
+                    <div class="stack mt-3 font-color">
+                        <!-- <h3 class="big-title">Main Text Color: </h3> -->
+                        <div class="color-picker group">
+                            <div>Text Color</div>
+                            <div class="content fontcolornew" id="color-content-back">
+                                <!-- Color items will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- rotation slider -->
+                    <div class="stack mt-3">
+                        <div class="rotation-slider">
+                            <div>Rotation</div>
+                            <input type="range" min="-180" max="180" value="0" class="slider" id="rotation-slider-back">
+                            <input type="number" min="-180" max="180" value="0" id="rotation-input-back"
+                                placeholder="Enter degrees">
+                        </div>
+                    </div>
+
+                    <!-- outline color select -->
+                    <div class="stack mt-3 font-color">
+                        <div class="outline-picker group">
+                            <div>Outline</div>
+                            <div class="outline-content" id="outline-color-content-back">
+                                <!-- Outline color items will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- font size slider -->
+                    <div class="stack mt-3">
+                        <div class="font-size-slider">
+                            <div>Font Size</div>
+                            <input type="range" min="10" max="100" value="16" class="slider" id="font-size-slider-back">
+                            <input type="number" min="10" max="100" value="16" id="font-size-input-back"
+                                placeholder="Enter size">
+                        </div>
+                    </div>
+
+                    <!-- Letter Spacing -->
+                    <div class="stack mt-3">
+                        <div class="letter-spacing-slider">
+                            <div>Letter Spacing</div>
+                            <input type="range" min="0" max="20" value="0" class="slider"
+                                id="letter-spacing-slider-back">
+                            <input type="number" min="0" max="20" value="0" id="letter-spacing-input-back">
+                        </div>
+                    </div>
+
+                    <!-- Line Height -->
+                    <div class="stack mt-3">
+                        <div class="line-height-slider">
+                            <div>Line Height</div>
+                            <input type="range" min="1" max="3" step="0.1" value="1.5" class="slider"
+                                id="line-height-slider-back">
+                            <input type="number" min="1" max="3" step="0.1" value="1.5" id="line-height-input-back">
+                        </div>
+                    </div>
+
+                    <!-- Text Styling -->
+                    <div class="stack mt-3 group align-items-center">
+                        <div>Text Styling</div>
+                        <div class="btn-group" role="group" aria-label="Text Styling">
+                            <input type="checkbox" class="btn-check" id="text-bold-back" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="text-bold-back"><i
+                                    class="fa fa-bold"></i></label>
+
+                            <input type="checkbox" class="btn-check" id="text-italic-back" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="text-italic-back"><i
+                                    class="fa fa-italic"></i></label>
+
+                            <input type="checkbox" class="btn-check" id="text-underline-back" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="text-underline-back"><i
+                                    class="fa fa-underline"></i></label>
+                        </div>
+                    </div>
+
+                    <!-- Text Transform -->
+                    <div class="stack mt-3 group align-items-center">
+                        <div>Text Transform</div>
+                        <div class="btn-group" role="group" aria-label="Text Transform">
+                            <input type="radio" class="btn-check" name="text-transform" id="transform-none-back"
+                                value="none" autocomplete="off" checked>
+                            <label class="btn btn-outline-primary" for="transform-none-back">None</label>
+
+                            <input type="radio" class="btn-check" name="text-transform" id="transform-uppercase-back"
+                                value="uppercase" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="transform-uppercase-back"><span
+                                    class="material-symbols-outlined">uppercase</span></label>
+
+                            <input type="radio" class="btn-check" name="text-transform" id="transform-lowercase-back"
+                                value="lowercase" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="transform-lowercase-back"><span
+                                    class="material-symbols-outlined">lowercase</span></label>
+
+                            <input type="radio" class="btn-check" name="text-transform" id="transform-capitalize-back"
+                                value="capitalize" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="transform-capitalize-back"><span
+                                    class="material-symbols-outlined">match_case</span></label>
+                        </div>
+                    </div>
+
+                    <!-- add new Text -->
+                    <div class="fifth-row" id="add-new-text-back">
+                        <i class="fa-regular fa-clone"></i>
+                        <div class="add-new-text">add text</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- carousel -->
+            <!-- Slider main container -->
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                   <!-- Swiper slides will be dynamically added here -->
+                </div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Modal - front -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">QR Code</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="parcode-container">
+                        <img class="qrcode" src="./imgs/qrcode.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal - back -->
+    <div class="modal fade" id="exampleModalback" tabindex="-1" aria-labelledby="exampleModalLabelback"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabelback">QR Code</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="parcode-container">
+                        <img class="qrcode" src="./imgs/qrcodeback.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Design - Modal -->
+        <div class="modal fade" id="designModal" tabindex="-1" aria-labelledby="designModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="designModalLabel">Designs</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="all-box" id="categoryList">
+                            <!-- Categories will be dynamically added here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+    <script src="js/draggable_resizable.js"></script>
+    <script src="js/swiper.js"></script>
+    <script src="js/onepage.js"></script>
+    <script src="js/shirtcolor.js"></script>
+    <script src="js/fontfamily.js"></script>
+    <script src="js/textcolor.js"></script>
+    <script src="js/crud.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/outlinecolor.js"></script>
+    <script src="js/fontsize.js"></script>
+    <script src="js/textshape.js"></script>
+    <script src="js/lineHeight.js"></script>
+    <script src="js/textstyle.js"></script>
+    <script src="js/texttransform.js"></script>
+    <script src="js/textstyleback.js"></script>
+    <script src="js/upload.js"></script>
+</body>
+
+</html>

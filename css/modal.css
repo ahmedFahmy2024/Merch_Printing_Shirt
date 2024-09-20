@@ -1,0 +1,12 @@
+.modal-body .parcode-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    margin: 0 auto;
+}
+
+.modal-body .parcode-container .qrcode {
+    width: 100%;
+    object-fit: cover;
+}
